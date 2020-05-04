@@ -1,0 +1,47 @@
+html {
+    background-image: url("fundo.jpeg"); /*deixar uma imagem de fundo, fazendo 
+    as divs se mecherem sem mecher na imagem de fundo.*/
+    background-position: center top; /*centraliza a imagem*/
+    background-repeat: no-repeat; /*Não deixa que a imagem se repita*/
+    background-size: cover; /*A imagem é renderizada, preservando sua proporção*/
+}
+
+body{
+    color: white;
+}
+
+.sensor{
+    background-color: #25064C;
+    width: 800px;
+    height: 100%;
+    text-align: center;
+    margin-left: 250px;
+    border-radius: 25px 25px;
+}
+
+.renda{
+    background-color: #25064C;
+    width: 600px;
+    height: 100%;
+    text-align: center;
+    margin-left: 350px;
+    border-radius: 25px 25px;
+}
+
+input{
+    border-radius: 25px 25px;
+}
+
+input[placeholder]{
+    width: 250px;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+}
+
+button{
+    border-radius: 50px 50px;
+    width: 300px;
+    height: 35px;
+}
