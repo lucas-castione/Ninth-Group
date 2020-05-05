@@ -98,8 +98,91 @@
     -->
     <div class="footer">
       <div class="container">
-        Sensor 9t
-      </div>
-    </div>
-  </body>
+      
+      </div> </div>
+
+ <div class="simulando">
+    <div style=" text-align: center" class="sensor">
+    <h1>Simulador Financeiro Ninth Group</h1>
+    <h3> Bem vindo ao sistema de simulador Financeiro do Ninth Group! <br>
+    Aqui você poderá ter uma estimativa de quanto poderá lucrar com o projeto do Ninth Group.</h3>
+  
+    <h2 style="color: #9768D1">Vamos começar?</h2> 
+    <b>Primeiro consulte aqui  quantos sensores sua empresa precisará para que o resultado seja mais preciso.</b>
+    <br>
+    <br>
+
+    <b> Coloque aqui do seu estoque em metros quadrado.</b> <br>
+      <input id="tamanho_estoque" placeholder=""> <br>
+    <br>
+
+    <b> Coloque aqui quantos tipos de remédios termolábeis diferentes sua empresa mexe. <br>
+      <input id="tipos_de_termolabeis" placeholder=""> <br>
+    <br> 
+
+      <button onclick="estimativa_de_sensores()" class="botaozin">Veja quantos sensores você precisará</button> <br>
+    <br>
+    </div> <br>
+
+
+  <div id="sensores_estimados" style=" text-align: center" style="color: white"></div> <br>
+  <br>
+
+
+  <div style=" text-align: center" class="renda">
+
+    <b>Digite o Nome de sua empresa.</b> <br>
+      <input id="nome_da_empresa" placeholder=""> <br>
+  <br>
+
+  <b>Informe quantos remedios você possui em seu estoque ? <br>
+  <input type="text" id="qtd_remedios" placeholder=""><br>
+  <br>
+
+  <b>Informe quantos remedios você perde por estragarem por mês? <br>
+  <input id= qtd_perda placeholder=""> <br> 
+  <br>
+
+  <b>Sua empresa vende os remedios por qual valor?</b><br>
+  <input id="valor_remedios" placeholder=""><br>
+  <br>
+
+  <b> Quantos sensores sua empresa irá precisar?</b><br>
+      <input id="numero_de_sensores" placeholder=""> <br>
+  <br>
+
+  <button onclick="calcular_porcentagem_de_lucro()" class="botaozin" ><b> Calcular lucro previsto</b></button>
+  </div>
+
+  <br>
+  <br>
+  <div id="resultado_do_calculo" style=" text-align: center" style="color: white"></div> 
+  <br>
+  <br>
+ 
+  </div>
+  </div>
+</div>
+</body>
 </html>
+<script>
+  function estimativa_de_sensores(){
+      var sensor_por_area = Number(tamanho_estoque.value) / 1256;
+      var sensor_por_area_oficial = Math.ceil(sensor_por_area);
+      var quantidade_de_sensores = sensor_por_area_oficial + (Number(tipos_de_termolabeis.value) - 1 );
+
+      window.alert( `${quantidade_de_sensores} sensores.`)
+  }
+
+  function calcular_porcentagem_de_lucro(){
+      var gasto_com_o_projeto = ((12 + 60 + 7) * (numero_de_sensores.value)) + 10 + 600;
+      var remedio = Number(qtd_remedios.value);
+      var perda = Number(qtd_perda.value);
+      var valor = Number(valor_remedios.value);
+      var percaTotal = perda * valor;
+      var lucroTotal = remedio * valor;
+
+
+      window.alert( `${nome_da_empresa.value} perde R$${percaTotal.toFixed(2)}  por mês em remedios estragados por temperatura e umidade O seu lucro é de R$${(lucroTotal - percaTotal).toFixed(2)} por mês. O lucro total que você pode alcançar com nosso projeto é de R$${lucroTotal.toFixed(2)} por mês. E o gasto que você terá com o nosso projeto será de ${gasto_com_o_projeto}, porém terá uma taxa de manuntenção mensal de 600 reais.`)
+  }
+</script>
