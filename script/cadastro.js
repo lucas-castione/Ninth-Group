@@ -15,7 +15,7 @@ btnSignup.addEventListener("click", function () {
 function logon(){
    
     if(input_email.value == 'adm@ninthgroup.com' && input_pass.value == '123456789'){
-        window.location.href ='chartjs-exemplo-uma-linha.html';
+        window.location.href ='../grafico.html';
     }else{
         alert('login ou senha incorretos');
     }
